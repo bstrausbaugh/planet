@@ -1,0 +1,45 @@
+<h1>Iteration</h1>
+
+<%= link_to 'Edit', edit_iteration_path(@iteration) %> |
+<%= link_to 'Iterations', project_path(@iteration.project)  %>
+
+<p>
+  <b>Project:</b>
+  <%=h @iteration.project.name %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @iteration.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @iteration.description %>
+</p>
+
+<p>
+  <b>Starts on:</b>
+  <%=h @iteration.start_on %>
+</p>
+
+<p>
+  <b>Ends on:</b>
+  <%=h @iteration.end_on %>
+</p>
+
+<%= link_to 'New Story', new_iteration_story_path(@iteration) %>
+
+<div id="stories">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Tracker</th>
+      <th>Customer</th>
+      <th>Estimate</th>
+      <th>Priority</th>
+    </tr>
+    <%= render :partial => @iteration.stories %>
+  </table>
+</div>
+

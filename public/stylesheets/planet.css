@@ -1,0 +1,74 @@
+/* hidden rows */
+.archived {
+  background-color: #eee;
+}
+
+/* horizontal navigation */
+#top-nav {
+	color: #666;
+	background-color: #eee;
+	padding: 3px;
+	margin-bottom: 25px;
+}
+
+#top-nav ul {
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	border: none;
+} 
+
+#top-nav ul li {
+	margin-left: 0;
+	padding-left: 2px;
+	border: none;
+	list-style: none;
+	display: inline;
+}
+
+#top-nav ul li:before {
+	content: "\0020 \0020 \0020 \00BB \0020";
+	color: #333;
+}
+
+#top-nav ul li.first:before {
+	content: " ";
+}
+
+/* rails scaffold.css error styles */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}

@@ -1,0 +1,9 @@
+<% div_for iteration do %>
+    <tr>
+      <td><%= link_to h(iteration.to_s), iteration %></td>
+      <td><%= h iteration.start_on %></td>
+      <td><%= h iteration.end_on %></td>
+      <td><%= link_to 'Edit', edit_iteration_path(iteration) %></td>
+      <td><%= link_to 'Remove', iteration, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+<% end %>

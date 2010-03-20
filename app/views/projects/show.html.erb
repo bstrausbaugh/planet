@@ -1,0 +1,37 @@
+<h1>Project</h1>
+
+<div class="subnav">
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Projects', projects_path %>
+</div>
+
+<p>
+  <b>Name:</b>
+  <%= h @project.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= h @project.description %>
+</p>
+
+<p>
+  <b>Hidden:</b>
+  <%= h @project.hidden %>
+</p>
+
+<div class="subnav">
+  <%= link_to 'New Iteration', new_project_iteration_path(@project) %>
+</div>
+
+
+<div id="iterations">
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Starts</th>
+      <th>Ends</th>
+    </tr>
+    <%= render :partial => @project.iterations %>
+  </table>
+</div>

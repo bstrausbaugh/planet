@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+registration:
+  name: Conference Registration
+  description: Registration is a core component...
+  hidden: false
+
+online_orders:
+  name: Online Orders
+  description: Online Orders will get sourced to the EB group...
+  hidden: false
+
+archived_application:
+  name: Archived Application
+  description: We no longer use this application.
+  hidden: true

@@ -1,0 +1,9 @@
+<tr>
+  <td><%= link_to h(story.name), story %></td>
+  <td><%= h story.tracker %></td>
+  <td><%= h story.customer %></td>
+  <td><%= h story.estimate %></td>
+  <td><%= h story.priority %></td>
+  <td><%= link_to 'Edit', edit_story_path(story) %></td>
+  <td><%= link_to 'Remove', story, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>

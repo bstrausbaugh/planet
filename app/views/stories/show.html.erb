@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @story.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @story.description %>
+</p>
+
+<p>
+  <b>Iteration:</b>
+  <%=h @story.iteration %>
+</p>
+
+<p>
+  <b>Tracker:</b>
+  <%=h @story.tracker %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%=h @story.customer %>
+</p>
+
+<p>
+  <b>Estimate:</b>
+  <%=h @story.estimate %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @story.priority %>
+</p>
+
+
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>

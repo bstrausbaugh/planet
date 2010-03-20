@@ -1,0 +1,29 @@
+<h1>Iteration</h1>
+
+<%= link_to 'Cancel', @iteration %> |
+<%= link_to 'Iterations', project_path(@iteration.project) %>
+
+<% form_for(@iteration) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :start_on, "Starts on" %><br />
+    <%= f.date_select :start_on %>
+  </p>
+  <p>
+    <%= f.label :end_on, "Ends on" %><br />
+    <%= f.date_select :end_on %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+

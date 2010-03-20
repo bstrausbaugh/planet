@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+iteration_zero:
+  project: registration
+  name: Planning iteration
+  description:
+  start_on: <%= (Date.today - 15).to_s %>
+  end_on: <%= (Date.today - 8).to_s %>
+
+iteration_one:
+  project: registration
+  name:
+  description:
+  start_on: <%= (Date.today - 7).to_s %>
+  end_on: <%= (Date.today - 1).to_s %>
+
+iteration_two:
+  project: registration
+  name:
+  description:
+  start_on: <%= (Date.today).to_s %>
+  end_on: <%= (Date.today + 7).to_s %>
+
+iteration_three:
+  project: registration
+  name:
+  description:
+  start_on: <%= (Date.today + 8).to_s %>
+  end_on: <%= (Date.today + 15).to_s %>

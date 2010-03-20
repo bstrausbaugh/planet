@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  iteration: 
+  tracker: 1
+  customer: 1
+  estimate: 1
+  priority: 1
+
+two:
+  name: MyString
+  description: MyText
+  iteration: 
+  tracker: 1
+  customer: 1
+  estimate: 1
+  priority: 1

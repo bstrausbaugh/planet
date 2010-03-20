@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  type: MyString
+  disposition: MyString
+  acceptor_id: 1
+  estimate: 1
+  complete: false
+  story: 
+
+two:
+  name: MyString
+  description: MyText
+  type: MyString
+  disposition: MyString
+  acceptor_id: 1
+  estimate: 1
+  complete: false
+  story: 

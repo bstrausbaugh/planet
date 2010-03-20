@@ -1,0 +1,40 @@
+<h1>Editing story</h1>
+
+<% form_for(@story) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :iteration %><br />
+    <%= f.text_field :iteration %>
+  </p>
+  <p>
+    <%= f.label :tracker %><br />
+    <%= f.text_field :tracker %>
+  </p>
+  <p>
+    <%= f.label :customer %><br />
+    <%= f.text_field :customer %>
+  </p>
+  <p>
+    <%= f.label :estimate %><br />
+    <%= f.text_field :estimate %>
+  </p>
+  <p>
+    <%= f.label :priority %><br />
+    <%= f.text_field :priority %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @story %> |
+<%= link_to 'Back', stories_path %>

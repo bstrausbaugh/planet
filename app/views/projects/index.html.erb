@@ -1,0 +1,30 @@
+<h1>Projects</h1>
+
+<div class="subnav">
+  <%= link_to 'New Project', new_project_path %>
+</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Iteration</th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr class="<%= project.hidden ? 'archived' : 'active' %>">
+    <td><%= link_to h(project.name), project  %></td>
+    <td><%= link_to h(project.current_iteration), project.current_iteration %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Remove', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<div id="filter">
+<% if @allprojects %>
+    <%= link_to "show active projects", projects_url %>
+<% else %>
+    <%= link_to "show all projects", :action => :all %>
+<% end %>
+</div>
+
