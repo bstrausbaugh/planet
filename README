@@ -1,5 +1,10 @@
 == Planet
 
+Currently this is a simple interface for the XPlanner schema allowing us
+to replace a poorly performing and difficult to use application with something we
+hope to extend.
+
+
 Roadmap Ideas
 
 Release 1.
