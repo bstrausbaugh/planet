@@ -1,6 +1,6 @@
-<h1 class="span-20 last">Projects</h1>
+<h1 class="span-21 last">Projects</h1>
 
-<div id="filter" class="span-4 last">
+<div id="filter" class="span-3 last">
 <% if @allprojects %>
     <%= link_to "show active projects", projects_url %>
 <% else %>
@@ -10,7 +10,9 @@
 
 
 <div class="subnav  span-24 last">
-  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/project_new.png") + 'New Project', new_project_path, :class => "button" %>
+  <p>
+    <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/project_new.png") + 'New Project', new_project_path, :class => "button ui-state-default ui-corner-all" %>
+  </p>
 </div>
 
 

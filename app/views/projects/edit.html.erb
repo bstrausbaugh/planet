@@ -1,7 +1,9 @@
-<h1 class="span-21">Project : <%= @project.name %></h1>
+<h1 class="span-21">Project : <%= @project.new_record? ? "New" : @project.name %></h1>
 
 <div class="subnav span-3 last">
-  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/cross.png") + 'Cancel', @project, :class => "button negative" %>
+  <a href="<%= @project.new_record? ? projects_path : project_path(@project) %>" class="button ui-state-default ui-corner-all">
+    <img src="/stylesheets/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
+  </a>
 </div>
 
 <% form_for(@project) do |f| %>
@@ -27,9 +29,9 @@
       <%= f.check_box :hidden %>
   </div>
   <div class="span-24 last">
-    <button type="submit" class="button positive">
-      <img src="/stylesheets/blueprint/plugins/buttons/icons/project.png" alt=""/> Update
-    </button>
+        <button type="submit" class="button ui-state-default ui-corner-all">
+          <img src="/stylesheets/blueprint/plugins/buttons/icons/project.png" alt=""/> <%= @project.new_record? ? "Create" : "Update" %>
+        </button>
   </div>
 <% end %>
 

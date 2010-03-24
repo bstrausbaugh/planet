@@ -28,6 +28,7 @@ x. Add styles for messages (model errors)
 14. Project removal if no children or maybe all created by user
 15. Add an "Accept" link to task lists which sets the current user as the Acceptor
 16. Highlight a row on mouse hover (hard to tell which edit/delete button is over)
+17. ? Can we send Cancel back to where Edit came from
 
 Release 2.
 

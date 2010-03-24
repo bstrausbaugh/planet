@@ -1,12 +1,14 @@
-<h1 class="span-21">Story : <%= @story.name %></h1>
+<h1 class="span-21">Story : <%= @story.new_record? ? "New" : @story.name %></h1>
 
 <div class="subnav span-3 last">
-  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/cross.png") + 'Cancel', @story, :class => "button negative" %>
+  <a href="<%= @story.new_record? ? iteration_path(@iteration) : story_path(@story) %>" class="button ui-state-default ui-corner-all">
+    <img src="/stylesheets/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
+  </a>
 </div>
 
-<% form_for(@story) do |f| %>
+<% form = Proc.new do |f| %>
     <div class="span-24 last">
-      <%= f.error_messages %>
+      <%= error_messages_for :story %>
     </div>
     <div class="span-24 last">
       <%= f.label :name %>
@@ -51,8 +53,9 @@
       <%= f.text_field :priority %>
     </div>
     <div class="span-24 last">
-      <button type="submit" class="button positive">
-        <img src="/stylesheets/blueprint/plugins/buttons/icons/story_save.png" alt=""/> Update
+      <button type="submit" class="button ui-state-default ui-corner-all">
+        <img src="/stylesheets/blueprint/plugins/buttons/icons/story_save.png" alt=""/> <%= @story.new_record? ? "Create" : "Update" %>
       </button>
     </div>
 <% end %>
+<% @story.new_record? ? form_for([@iteration, Story.new], &form) : form_for(@story, &form) %>

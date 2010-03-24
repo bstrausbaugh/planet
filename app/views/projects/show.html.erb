@@ -1,7 +1,7 @@
 <h1 class="span-22">Project : <%= @project.name %></h1>
 
 <div class="subnav span-2 last">
-  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/project_edit.png", :alt => "") + 'Edit', edit_project_path(@project), :class => "button" %>
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/project_edit.png", :alt => "") + 'Edit', edit_project_path(@project), :class => "button ui-state-default ui-corner-all" %>
 </div>
 
 <div class="description span-24 last">
@@ -11,7 +11,9 @@
 <hr />
 
 <div class="subnav  span-24 last">
-  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_new.png") + 'New Iteration', new_project_iteration_path(@project), :class => "button" %>
+  <p>
+    <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_new.png") + 'New Iteration', new_project_iteration_path(@project), :class => "button ui-state-default ui-corner-all" %>
+  </p>
 </div>
 
 <div id="iterations" class="children span-24 last">

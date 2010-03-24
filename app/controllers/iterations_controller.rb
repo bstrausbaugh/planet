@@ -22,7 +22,7 @@ class IterationsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :edit }
       format.xml  { render :xml => @iteration }
     end
   end
@@ -49,7 +49,7 @@ class IterationsController < ApplicationController
         format.xml  { render :xml => @iteration, :status => :created, :location => @iteration }
       else
         puts @iteration.errors
-        format.html { render :action => "new" }
+        format.html { render 'edit' }
         format.xml  { render :xml => @iteration.errors, :status => :unprocessable_entity }
       end
     end

@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
     @project = Project.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :edit }
       format.xml  { render :xml => @project }
     end
   end
