@@ -1,26 +1,6 @@
-<h1>Projects</h1>
+<h1 class="span-20 last">Projects</h1>
 
-<div class="subnav">
-  <%= link_to 'New Project', new_project_path %>
-</div>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Iteration</th>
-  </tr>
-
-<% @projects.each do |project| %>
-  <tr class="<%= project.hidden ? 'archived' : 'active' %>">
-    <td><%= link_to h(project.name), project  %></td>
-    <td><%= link_to h(project.current_iteration), project.current_iteration %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Remove', project, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<div id="filter">
+<div id="filter" class="span-4 last">
 <% if @allprojects %>
     <%= link_to "show active projects", projects_url %>
 <% else %>
@@ -28,3 +8,23 @@
 <% end %>
 </div>
 
+
+<div class="subnav  span-24 last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/project_new.png") + 'New Project', new_project_path, :class => "button" %>
+</div>
+
+
+<div id="projects" class="children span-24 last">
+<span class="header span-10">Name</span>
+<span class="header span-12">Iteration</span>
+<span class="span-2 last">&nbsp;</span>
+
+<% @projects.each do |project| %>
+  <div class="<%= project.hidden ? 'archived' : 'active' %> span-24 last">
+    <span class="span-10"><%= link_to h(project.name), project  %></span>
+    <span class="span-12"><%= link_to h(project.current_iteration), project.current_iteration %>&nbsp;</span>
+    <span class="span-1"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/project_edit.png", :alt => "Edit"), edit_project_path(project) %></span>
+    <span class="span-1 last"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/project_delete.png", :alt => project.hidden ? 'Remove' : 'Hide'), project, :confirm => 'Are you sure?', :method => :delete %></span>
+  </div>
+<% end %>
+</div>

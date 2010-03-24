@@ -48,6 +48,7 @@ class IterationsController < ApplicationController
         format.html { redirect_to(@iteration) }
         format.xml  { render :xml => @iteration, :status => :created, :location => @iteration }
       else
+        puts @iteration.errors
         format.html { render :action => "new" }
         format.xml  { render :xml => @iteration.errors, :status => :unprocessable_entity }
       end
@@ -75,10 +76,11 @@ class IterationsController < ApplicationController
   # DELETE /iterations/1.xml
   def destroy
     @iteration = Iteration.find(params[:id])
+    @project = @iteration.project
     @iteration.destroy
 
     respond_to do |format|
-      format.html { redirect_to(iterations_url) }
+      format.html { redirect_to(project_url(@project)) }
       format.xml  { head :ok }
     end
   end

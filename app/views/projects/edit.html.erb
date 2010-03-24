@@ -1,25 +1,35 @@
-<h1>Project</h1>
+<h1 class="span-21">Project : <%= @project.name %></h1>
 
-<%= link_to 'Cancel', @project %> |
-<%= link_to 'Projects', projects_path %>
+<div class="subnav span-3 last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/cross.png") + 'Cancel', @project, :class => "button negative" %>
+</div>
 
 <% form_for(@project) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
+  <div class="span-24 last">
+    <%= f.error_messages %>
+  </div>
+  <div class="span-24 last">
+    <%= f.label :name %>
+  </div>
+  <div class="span-24 last">    
     <%= f.text_field :name %>
-  </p>
-  <p>
+  </div>
+  <div class="span-24 last">
     <%= f.label :description %><br />
+  </div>
+  <div class="span-24 last">
     <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :hidden %><br />
-    <%= f.check_box :hidden %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  </div>
+  <div class="span-2">
+     <%= f.label :hidden %><br />
+  </div>
+  <div class="span-22 last">
+      <%= f.check_box :hidden %>
+  </div>
+  <div class="span-24 last">
+    <button type="submit" class="button positive">
+      <img src="/stylesheets/blueprint/plugins/buttons/icons/project.png" alt=""/> Update
+    </button>
+  </div>
 <% end %>
 

@@ -9,24 +9,25 @@ Roadmap Ideas
 
 Release 1.
 
-1. Change Remove to Hide for non-hidden projects; mark as hidden
-2. Change Hide to Remove for hidden projects; 
-	allow removal if no children or maybe all created by user
-3. Release 2/3 Add archive database/tables instead of remove
+x. Change Remove to Hide for non-hidden projects; mark as hidden
+x. Change Hide to Remove for hidden projects;
+x. Finish integrating Blueprint CSS
+x. Add styles for messages (model errors)
 
+3. (Fixed?) Sorting for Home and children
 4. * Rich Text Editor (TinyMCE?)
 5. Tasks
   a. Add sort column (hate sorting on name)
 6. Time (note - don't change task estimate when actual time exceed task)
 7. Show Progress at task, story, and iteration (burn down chart?)
-8. Finish integrating Blueprint CSS
 
 9. Review security or param passing
-10. Add styles for messages (model errors)
 11. * Search (must have story id lookup but want keyword search)
 12. * Attach files to Story (think mime/type, display, etc...)
 13. * Easier navigation for iterations and moving stories to next/prev iteration
-
+14. Project removal if no children or maybe all created by user
+15. Add an "Accept" link to task lists which sets the current user as the Acceptor
+16. Highlight a row on mouse hover (hard to tell which edit/delete button is over)
 
 Release 2.
 
@@ -35,6 +36,7 @@ Release 2.
 3. Backlog? Stories with no Iteration
 4. Teams replaces Projects
 5. No "Projects" but maybe project and system tags?
+6. Archive database/tables instead of remove
 
 Release 3.
 

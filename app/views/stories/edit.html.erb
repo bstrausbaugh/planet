@@ -1,40 +1,58 @@
-<h1>Editing story</h1>
+<h1 class="span-21">Story : <%= @story.name %></h1>
+
+<div class="subnav span-3 last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/cross.png") + 'Cancel', @story, :class => "button negative" %>
+</div>
 
 <% form_for(@story) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :iteration %><br />
-    <%= f.text_field :iteration %>
-  </p>
-  <p>
-    <%= f.label :tracker %><br />
-    <%= f.text_field :tracker %>
-  </p>
-  <p>
-    <%= f.label :customer %><br />
-    <%= f.text_field :customer %>
-  </p>
-  <p>
-    <%= f.label :estimate %><br />
-    <%= f.text_field :estimate %>
-  </p>
-  <p>
-    <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+    <div class="span-24 last">
+      <%= f.error_messages %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :name %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :name %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :description %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_area :description %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :tracker %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :tracker %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :customer %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :customer %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :estimate %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :estimate %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :priority %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :priority %>
+    </div>
+    <div class="span-24 last">
+      <button type="submit" class="button positive">
+        <img src="/stylesheets/blueprint/plugins/buttons/icons/story_save.png" alt=""/> Update
+      </button>
+    </div>
 <% end %>
-
-<%= link_to 'Show', @story %> |
-<%= link_to 'Back', stories_path %>

@@ -1,38 +1,43 @@
-<p>
-  <b>Name:</b>
-  <%=h @story.name %>
-</p>
+<h1 class="span-22">Story : <%= @story.name %></h1>
 
-<p>
-  <b>Description:</b>
-  <%=h @story.description %>
-</p>
+<div class="subnav span-2 last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/story_edit.png", :alt => "Edit")+"Edit", edit_story_path(@story), :class => "button" %>
+</div>
 
-<p>
-  <b>Iteration:</b>
-  <%=h @story.iteration %>
-</p>
-
-<p>
+<div class="span-3">
   <b>Tracker:</b>
-  <%=h @story.tracker %>
-</p>
+</div>
+<div class="span-9">
+  <%=h @story.tracker %>&nbsp;
+</div>
 
-<p>
-  <b>Customer:</b>
-  <%=h @story.customer %>
-</p>
-
-<p>
+<div class="span-3">
   <b>Estimate:</b>
-  <%=h @story.estimate %>
-</p>
+</div>
+<div class="span-9 last">
+  <%=h @story.estimate %>&nbsp;
+</div>
 
-<p>
+<div class="span-3">
+  <b>Customer:</b>
+</div>
+<div class="span-9">
+  <%=h @story.customer %>&nbsp;
+</div>
+
+<div class="span-3">
   <b>Priority:</b>
-  <%=h @story.priority %>
-</p>
+</div>
+<div class="span-9 last">
+  <%=h @story.priority %>&nbsp;
+</div>
 
+<div class="description span-24 last">
+  <%=h @story.description %>
+</div>
 
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+<hr />
+
+<div class="subnav  span-24 last">
+   link_to 'New Task', new_story_task_path(@story) 
+</div>

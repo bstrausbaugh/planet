@@ -1,52 +1,55 @@
-<h1>Story</h1>
+<h1 class="span-21">Story : New</h1>
+
+<div class="subnav span-3 last">
+  <a href="<%= iteration_path(@iteration) %>" class="button negative">
+    <img src="/stylesheets/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
+  </a>
+</div>
+
 
 <% form_for([@iteration, Story.new]) do |f| %>
-  <%= f.error_messages %>
-
-	<div class="span-12">
-
-    <%= f.label :name %><br />
-</div>
-		<div class="span-12 last">
-    <%= f.text_field :name %>
-</div>
-	<div class="span-24 last">
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-	</div>
-  <p>
-    <%= f.label :tracker %><br />
-    <%= f.text_field :tracker %>
-  </p>
-  <p>
-    <%= f.label :customer %><br />
-    <%= f.text_field :customer %>
-  </p>
-  <p>
-    <%= f.label :estimate %><br />
-    <%= f.text_field :estimate %>
-  </p>
-  <p>
-    <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
-  </p>
-  <p>
-		<button type="submit" class="button positive">
-	    <img src="/stylesheets/blueprint/plugins/buttons/icons/tick.png" alt=""/> Create
-		</button>
-	  <a href="<%= iteration_path(@iteration) %>" class="button negative">
-	    <img src="/stylesheets/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
-	  </a>
-  </p>
-
-  <%= f.submit 'Create' %>
-	<%= link_to 'Cancel', iteration_path(@iteration) %>
-  <a class="button" href="/password/reset/">
-    <img src="/stylesheets/blueprint/plugins/buttons/icons/key.png" alt=""/> Change Password
-  </a>
-
-
-
+    <div class="span-24 last">
+      <%= error_messages_for :story %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :name %>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :name %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :description %>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_area :description %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :tracker %>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :tracker %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :customer %>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :customer %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :estimate %>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :estimate %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :priority %>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :priority %>
+    </div>
+    <div class="span-24 last">
+      <button type="submit" class="button positive">
+        <img src="/stylesheets/blueprint/plugins/buttons/icons/story_save.png" alt=""/> Create
+      </button>
+    </div>
 <% end %>

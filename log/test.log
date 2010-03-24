@@ -4414,3 +4414,33 @@ Completed in 3ms (DB: 1) | 302 Found [http://test.host/projects/581478312?]
   [4;35;1mIteration Create (0.5ms)[0m   [0mINSERT INTO "iterations" ("name", "created_at", "project_id", "updated_at", "end_on", "start_on", "description") VALUES(NULL, '2010-03-11 06:11:08', 581478312, '2010-03-11 06:11:08', '2010-04-03', '2010-03-27', NULL)[0m
   [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ('2010-03-27' between start_on and end_on and project_id = 581478312 and id != 1020628262) LIMIT 1[0m
   [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ('2010-04-03' between start_on and end_on and project_id = 581478312 and id != 1020628262) LIMIT 1[0m
+  [4;36;1mProject Load (0.8ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;35;1mIteration Load (0.3ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;36;1mIteration Load (0.3ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mProject Create (0.4ms)[0m   [0;1mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "hidden") VALUES('Test', '2010-03-23 03:35:28', '2010-03-23 03:35:28', NULL, NULL)[0m
+  [4;35;1mProject Load (2.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;36;1mIteration Load (0.3ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;35;1mIteration Load (0.3ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mProject Create (0.6ms)[0m   [0;1mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "hidden") VALUES('Test', '2010-03-23 03:37:35', '2010-03-23 03:37:35', NULL, NULL)[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;35;1mIteration Load (0.3ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mProject Load (0.5ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;36;1mIteration Load (0.3ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;35;1mIteration Load (0.3ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;36;1mIteration Load (0.3ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;36;1mIteration Load (0.4ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mProject Create (0.5ms)[0m   [0;1mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "hidden") VALUES('Test', '2010-03-23 03:51:07', '2010-03-23 03:51:07', NULL, 'f')[0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 581478312) [0m
+  [4;36;1mIteration Load (0.3ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 755529978) [0m
+  [4;35;1mIteration Load (0.5ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 581478312 AND ('2010-03-22' between start_on and end_on)) LIMIT 1[0m

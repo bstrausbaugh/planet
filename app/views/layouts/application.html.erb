@@ -1,30 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
   <title>Planet</title>
 
   <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print">	
+  <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print">
   <!--[if lt IE 8]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
   <link rel="stylesheet" href="/stylesheets/blueprint/plugins/buttons/screen.css" type="text/css" media="screen, projection">
 
-	<%= stylesheet_link_tag "planet" %>
+  <%= stylesheet_link_tag "planet" %>
 
 </head>
 <body>
-	<div class="container">
-		<div id="header" class="span-24 last">
-		</div>
+<div class="container">
+  <div id="top-nav" class="nav"><%= top_nav %></div>
+  <p style="color: green"><%= flash[:notice] %></p>
 
-			<div id="top-nav" class="nav"><%= top_nav %></div>
-			<p style="color: green"><%= flash[:notice] %></p>
-
-			<%= yield %>
-
-	</div>
+  <%= yield %>
+</div>
 </body>
 </html>

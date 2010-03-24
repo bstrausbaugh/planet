@@ -38,16 +38,16 @@
 /* rails scaffold.css error styles */
 
 .fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  /*padding: 2px;*/
+  color: red;
+  /*display: table;*/
 }
 
 #errorExplanation {
   width: 400px;
   border: 2px solid red;
   padding: 7px;
-  padding-bottom: 12px;
+  /*padding-bottom: 12px;*/
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
@@ -58,6 +58,7 @@
   padding: 5px 5px 5px 15px;
   font-size: 12px;
   margin: -7px;
+  margin-bottom: 7px;  
   background-color: #c00;
   color: #fff;
 }
@@ -71,4 +72,19 @@
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+.description {
+    padding-bottom: 15px;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.children {
+    padding: 5px;
+}
+.children div {
+    padding-bottom: 5px;
 }

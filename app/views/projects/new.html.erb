@@ -1,23 +1,29 @@
-<h1>New project</h1>
+<h1 class="span-21 last">Project : New</h1>
+
+<div class="subnav span-3 last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/cross.png") + 'Cancel', @project, :class => "button negative" %>
+</div>
+
 
 <% form_for(@project) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :hidden %><br />
-    <%= f.check_box :hidden %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+    <div class="span-24 last">
+      <%= f.error_messages %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :name %>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :name %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :description %><br />
+    </div>
+    <div class="span-24 last">
+      <%= f.text_area :description %>
+    </div>
+    <div class="span-24 last">
+      <button type="submit" class="button positive">
+        <img src="/stylesheets/blueprint/plugins/buttons/icons/project.png" alt=""/> Create
+      </button>
+    </div>
 <% end %>
-
-<%= link_to 'Back', projects_path %>

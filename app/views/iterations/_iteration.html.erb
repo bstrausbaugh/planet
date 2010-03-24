@@ -1,9 +1,9 @@
-<% div_for iteration do %>
-    <tr>
-      <td><%= link_to h(iteration.to_s), iteration %></td>
-      <td><%= h iteration.start_on %></td>
-      <td><%= h iteration.end_on %></td>
-      <td><%= link_to 'Edit', edit_iteration_path(iteration) %></td>
-      <td><%= link_to 'Remove', iteration, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+<% div_for iteration, :class => "span-24 last" do %>
+    <span class="span-6"><%= link_to h(iteration.to_s), iteration %></span>
+    <span class="span-6"><%= h iteration.start_on %></span>
+    <span class="span-10"><%= h iteration.end_on %></span>
+    <span class="span-1"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_edit.png", :alt => "Edit"), edit_iteration_path(iteration) %></span
+    <span class="span-1 last">
+    <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_delete.png", :alt => "Remove"), iteration, :confirm => 'Are you sure?', :method => :delete %>
+    </span>
 <% end %>

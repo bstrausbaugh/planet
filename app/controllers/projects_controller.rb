@@ -3,7 +3,8 @@ class ProjectsController < ApplicationController
   # GET /projects.xml
   def index
     @projects ||= Project.find(:all,
-                             :conditions => ["hidden = ?", false])
+                             :conditions => ["hidden = ?", false],
+                             :order => :name)
     respond_to do |format|
       format.html { render :index }
       format.xml  { render :xml => @projects }
@@ -11,7 +12,7 @@ class ProjectsController < ApplicationController
   end
 
   def all
-    @allprojects = Project.find(:all)
+    @allprojects = Project.find(:all, :order => :name)
     @projects = @allprojects
     index
   end
@@ -81,7 +82,12 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.xml
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
+    if @project.hidden?
+      @project.destroy
+    else
+      @project.hidden = true
+      @project.save!
+    end
 
     respond_to do |format|
       format.html { redirect_to(projects_url) }

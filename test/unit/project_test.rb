@@ -13,4 +13,13 @@ class ProjectTest < ActiveSupport::TestCase
     assert_equal iterations(:iteration_two), project.current_iteration
   end
 
+  test "a new project's hidden field should be false and not nil" do
+    project = Project.new
+    project.name = "Test"
+    project.save
+
+    assert_not_nil project.hidden
+    assert !project.hidden?
+  end
+
 end

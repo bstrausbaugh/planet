@@ -24,7 +24,6 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_select "div#filter a", "show active projects"
   end
 
-
   test "should get new" do
     get :new
     assert_response :success

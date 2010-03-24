@@ -56,8 +56,11 @@ class StoriesController < ApplicationController
   # PUT /stories/1
   # PUT /stories/1.xml
   def update
-    @story = Story.find(params[:id])
+    params[:story][:tracker] = nil
+    params[:story][:customer] = nil
 
+    @story = Story.find(params[:id])
+    
     respond_to do |format|
       if @story.update_attributes(params[:story])
         flash[:notice] = 'Story was successfully updated.'
@@ -74,10 +77,11 @@ class StoriesController < ApplicationController
   # DELETE /stories/1.xml
   def destroy
     @story = Story.find(params[:id])
+    @iteration = @story.iteration
     @story.destroy
 
     respond_to do |format|
-      format.html { redirect_to(stories_url) }
+      format.html { redirect_to(iteration_url(@iteration)) }
       format.xml  { head :ok }
     end
   end

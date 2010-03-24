@@ -1,45 +1,38 @@
-<h1>Iteration</h1>
+<h1 class="span-22">Iteration : <%= @iteration.to_s %></h1>
 
-<%= link_to 'Edit', edit_iteration_path(@iteration) %> |
-<%= link_to 'Iterations', project_path(@iteration.project)  %>
-
-<p>
-  <b>Project:</b>
-  <%=h @iteration.project.name %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%=h @iteration.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%=h @iteration.description %>
-</p>
-
-<p>
-  <b>Starts on:</b>
-  <%=h @iteration.start_on %>
-</p>
-
-<p>
-  <b>Ends on:</b>
-  <%=h @iteration.end_on %>
-</p>
-
-<%= link_to 'New Story', new_iteration_story_path(@iteration) %>
-
-<div id="stories">
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Tracker</th>
-      <th>Customer</th>
-      <th>Estimate</th>
-      <th>Priority</th>
-    </tr>
-    <%= render :partial => @iteration.stories %>
-  </table>
+<div class="subnav span-2 last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_edit.png", :alt => "") + 'Edit', edit_iteration_path(@iteration), :class => "button" %>
 </div>
 
+<div class="span-2">
+  <b>Starts on:</b>
+</div>
+<div class="span-4">
+  <%=h @iteration.start_on %>
+</div>
+<div class="span-2">
+    <b>Ends on:</b>
+</div>
+<div class="span-16 last">
+    <%=h @iteration.end_on %>
+</div>
+
+<div class="description span-24 last">
+  <%=h @iteration.description %>
+</div>
+
+<hr />
+
+<div class="subnav  span-24 last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/story_new.png") + 'New Story', new_iteration_story_path(@iteration), :class => "button" %>
+</div>
+
+<div id="stories" class="children span-24 last">
+<span class="header span-6">Name</span>
+<span class="header span-3">Tracker</span>
+<span class="header span-3">Customer</span>
+<span class="header span-4">Estimate</span>
+<span class="header span-4">Priority</span>
+<span class="span-2 last">&nbsp;</span>
+<%= render :partial => @iteration.stories %>
+</div>
