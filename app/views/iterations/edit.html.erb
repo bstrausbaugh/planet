@@ -1,6 +1,6 @@
 <h1 class="span-21">Iteration : <%= @iteration.new_record? ? "New" : @iteration.to_s %></h1>
 
-<div class="subnav span-3 last">
+<div class="subnav span-3 right last">
   <a href="<%= @iteration.new_record? ? project_path(@project) : iteration_path(@iteration) %>" class="button ui-state-default ui-corner-all">
     <img src="/stylesheets/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
   </a>
@@ -11,7 +11,7 @@
       <%= error_messages_for :iteration %>
     </div>
     <div class="span-24 last">
-      <%= f.label :name %>
+      <%= f.label :name %> (optional)   
       <br/>
     </div>
     <div class="span-24 last">
@@ -19,10 +19,9 @@
     </div>
     <div class="span-24 last">
       <%= f.label :description %>
-      <br/>
     </div>
     <div class="span-24 last">
-      <%= f.text_area :description %>
+      <%= fckeditor_textarea(:iteration, :description, :toolbarSet => 'Easy', :height => '200px') %>
     </div>
     <div class="span-24 last">
       <%= f.label :start_on, "Starts on" %>
@@ -32,9 +31,6 @@
       <%= f.date_select :start_on %>
       <input type="text" value="4/23/99" id="rangeA" />
     </div>
-
-    
-
 
     <div class="span-24 last">
       <%= f.label :end_on, "Ends on" %>

@@ -2,8 +2,8 @@
     <span class="span-6"><%= link_to h(iteration.to_s), iteration %></span>
     <span class="span-6"><%= h iteration.start_on %></span>
     <span class="span-10"><%= h iteration.end_on %></span>
-    <span class="span-1"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_edit.png", :alt => "Edit"), edit_iteration_path(iteration) %></span
-    <span class="span-1 last">
+    <span class="span-1 right"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_edit.png", :alt => "Edit"), edit_iteration_path(iteration) %></span
+    <span class="span-1 last right">
     <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_delete.png", :alt => "Remove"), iteration, :confirm => 'Are you sure?', :method => :delete %>
     </span>
 <% end %>

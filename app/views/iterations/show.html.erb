@@ -1,41 +1,40 @@
-<div class="span-24">
-  <h1 class="span-22 alpha">Iteration : <%= @iteration.to_s %></h1>
-  <div class="span-2 last">
-    <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_edit.png", :alt => "") + 'Edit', edit_iteration_path(@iteration), :class => "ui-state-default ui-corner-all button" %>
-  </div>
+<h1 class="span-22">Iteration : <%= @iteration.to_s %></h1>
+
+<div class="span-2 right last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/iteration_edit.png", :alt => "") + 'Edit', edit_iteration_path(@iteration), :class => "ui-state-default ui-corner-all button" %>
 </div>
 
 <div class="span-2">
   <b>Starts on:</b>
 </div>
 <div class="span-4">
-  <%=h @iteration.start_on %>
+  <%= h @iteration.start_on %>
 </div>
 <div class="span-2">
-    <b>Ends on:</b>
+  <b>Ends on:</b>
 </div>
 <div class="span-16 last">
-    <%=h @iteration.end_on %>
+  <%= h @iteration.end_on %>
 </div>
 
 <div class="description span-24 last">
-  <%=h @iteration.description %>
+  <%= h @iteration.description %>
 </div>
 
-<hr />
+<hr/>
 
 <div class="subnav span-24 last">
   <p>
-  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/story_new.png") + 'New Story', new_iteration_story_path(@iteration), :class => "ui-state-default ui-corner-all button" %>
+    <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/story_new.png") + 'New Story', new_iteration_story_path(@iteration), :class => "ui-state-default ui-corner-all button" %>
   </p>
 </div>
 
 <div id="stories" class="children span-24 last">
-<span class="header span-6">Name</span>
-<span class="header span-3">Tracker</span>
-<span class="header span-3">Customer</span>
-<span class="header span-4">Estimate</span>
-<span class="header span-4">Priority</span>
-<span class="span-2 last">&nbsp;</span>
-<%= render :partial => @iteration.stories %>
+  <span class="header span-8">Name</span>
+  <span class="header span-3">Tracker</span>
+  <span class="header span-3">Customer</span>
+  <span class="header span-4">Estimate</span>
+  <span class="header span-4">Priority</span>
+  <span class="span-2 last">&nbsp;</span>
+  <%= render :partial => @iteration.stories %>
 </div>

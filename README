@@ -13,22 +13,24 @@ x. Change Remove to Hide for non-hidden projects; mark as hidden
 x. Change Hide to Remove for hidden projects;
 x. Finish integrating Blueprint CSS
 x. Add styles for messages (model errors)
+x. Highlight a row on mouse hover (hard to tell which edit/delete button is over)
+x. Rich Text Editor (FckEditor)
 
+1. Drop Customer from Story
+2. Iteration - Stories grid (add columns, progress, sorting)
 3. (Fixed?) Sorting for Home and children
-4. * Rich Text Editor (TinyMCE?)
 5. Tasks
   a. Add sort column (hate sorting on name)
 6. Time (note - don't change task estimate when actual time exceed task)
 7. Show Progress at task, story, and iteration (burn down chart?)
 
-9. Review security or param passing
+9. Review security on param passing
 11. * Search (must have story id lookup but want keyword search)
 12. * Attach files to Story (think mime/type, display, etc...)
 13. * Easier navigation for iterations and moving stories to next/prev iteration
 14. Project removal if no children or maybe all created by user
 15. Add an "Accept" link to task lists which sets the current user as the Acceptor
-16. Highlight a row on mouse hover (hard to tell which edit/delete button is over)
-17. ? Can we send Cancel back to where Edit came from
+17. ? Can we send Cancel/Save back to where Edit came from
 
 Release 2.
 

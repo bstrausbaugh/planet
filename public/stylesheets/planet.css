@@ -82,9 +82,34 @@
     font-weight: bold;
 }
 
+/* reduces screen.css h1 size */
+h1 {
+    font-size: 2em;
+}
+
+/* allow elements to be anchored to the right side of page */
+.right {
+    text-align: right;
+}
+
+/* styles for the projects, iterations, stories, and tasks grids */
 .children {
+    padding: 0;
+}
+
+.children div {
     padding: 5px;
 }
-.children div {
-    padding-bottom: 5px;
+
+.children div:hover {
+    background-color: #DFEFFC;
+}
+
+.children div.archived:hover {
+    background-color: #C5DBEC;
+}
+
+/* new buttons are absolute */
+.subnav {
+    padding-top: 15px;
 }

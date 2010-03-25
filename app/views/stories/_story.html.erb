@@ -1,9 +1,9 @@
 <% div_for story, :class => "span-24 last" do %>
-    <span class="span-6"><%= link_to h(story.name), story %></span>
+    <span class="span-8"><%= link_to h(story.name), story %></span>
     <span class="span-3"><%= h story.tracker %>&nbsp;</span>
     <span class="span-3"><%= h story.customer %>&nbsp;</span>
     <span class="span-4"><%= h story.estimate %>&nbsp;</span
     <span class="span-4"><%= h story.priority %>&nbsp;</span
-    <span class="span-1"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/story_edit.png", :alt => "Edit"), edit_story_path(story) %></span
-    <span class="span-1 last"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/story_delete.png", :alt => "Remove"), story, :confirm => 'Are you sure?', :method => :delete %></span>
+    <span class="span-1 right"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/story_edit.png", :alt => "Edit"), edit_story_path(story) %></span
+    <span class="span-1 last right"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/story_delete.png", :alt => "Remove"), story, :confirm => 'Are you sure?', :method => :delete %></span>
 <% end %>

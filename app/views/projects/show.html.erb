@@ -1,11 +1,11 @@
 <h1 class="span-22">Project : <%= @project.name %></h1>
 
-<div class="subnav span-2 last">
+<div class="subnav span-2 right last">
   <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/project_edit.png", :alt => "") + 'Edit', edit_project_path(@project), :class => "button ui-state-default ui-corner-all" %>
 </div>
 
 <div class="description span-24 last">
-  <%= h @project.description %>
+  <%= @project.description %>
 </div>
 
 <hr />

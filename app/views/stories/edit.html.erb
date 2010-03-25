@@ -1,6 +1,6 @@
 <h1 class="span-21">Story : <%= @story.new_record? ? "New" : @story.name %></h1>
 
-<div class="subnav span-3 last">
+<div class="subnav span-3 last right">
   <a href="<%= @story.new_record? ? iteration_path(@iteration) : story_path(@story) %>" class="button ui-state-default ui-corner-all">
     <img src="/stylesheets/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
   </a>
@@ -22,7 +22,7 @@
       <br/>
     </div>
     <div class="span-24 last">
-      <%= f.text_area :description %>
+      <%= fckeditor_textarea(:story, :description, :toolbarSet => 'Easy', :height => '600px') %>
     </div>
     <div class="span-24 last">
       <%= f.label :tracker %>

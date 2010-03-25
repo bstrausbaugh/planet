@@ -1,10 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :tasks
 
-  map.resources :asks
-
-  
-  map.resources :stories
+  map.resources :stories, :has_many => [ :tasks ]
 
   map.resources :iterations, :has_many => [ :stories ]
 
