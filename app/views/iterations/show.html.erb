@@ -21,7 +21,9 @@
   <%= h @iteration.description %>
 </div>
 
-<hr/>
+<div class="span-24 last">
+<div id="pb" class="progress span-24 last">20</div>
+</div>
 
 <div class="subnav span-24 last">
   <p>
@@ -30,11 +32,14 @@
 </div>
 
 <div id="stories" class="children span-24 last">
-  <span class="header span-8">Name</span>
-  <span class="header span-3">Tracker</span>
-  <span class="header span-3">Customer</span>
-  <span class="header span-4">Estimate</span>
-  <span class="header span-4">Priority</span>
+  <span class="header span-6">Name</span>
+  <span class="header span-1 center">!</span>
+  <span class="header span-3 center">Tracker</span>
+  <span class="header span-4 center">Progress</span>
+  <span class="header span-2 center">Tasks</span>
+  <span class="header span-2 center">Est.</span>
+  <span class="header span-2 center">Act.</span>
+  <span class="header span-2 center">Rem.</span>
   <span class="span-2 last">&nbsp;</span>
   <%= render :partial => @iteration.stories %>
 </div>

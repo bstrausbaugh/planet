@@ -29,14 +29,7 @@
       <br/>
     </div>
     <div class="span-24 last">
-      <%= f.text_field :tracker %>
-    </div>
-    <div class="span-24 last">
-      <%= f.label :customer %>
-      <br/>
-    </div>
-    <div class="span-24 last">
-      <%= f.text_field :customer %>
+      <%= collection_select(:story, :tracker_id, Person.all, :id, :name, {:include_blank => 'Not Assigned'}, {}) %>
     </div>
     <div class="span-24 last">
       <%= f.label :estimate %>

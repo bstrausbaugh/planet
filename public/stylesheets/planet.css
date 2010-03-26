@@ -1,3 +1,14 @@
+body{ font: 75% "Trebuchet MS", sans-serif; margin: 10px;}
+.demoHeaders { margin-top: 2em; }
+#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+.button {padding: .6em 1em .6em 30px;text-decoration: none;position: relative; margin: 5px 0 5px 0;}
+.button img {margin: 0 5px 0 0; position: absolute; left: .5em; top: 50%; margin-top: -8px;}
+button.button img {margin: 0 5px 0 0; position: absolute; left: -2em; top: 50%; margin-top: -8px;}
+ul#icons {margin: 0; padding: 0;}
+ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+ul#icons span.ui-icon {float: left; margin: 0 4px;}
+
 /* hidden rows */
 .archived {
   background-color: #eee;
@@ -92,13 +103,17 @@ h1 {
     text-align: right;
 }
 
+.center {
+    text-align: center;
+}
+
 /* styles for the projects, iterations, stories, and tasks grids */
 .children {
     padding: 0;
 }
 
 .children div {
-    padding: 5px;
+    padding: 5px 0;
 }
 
 .children div:hover {
@@ -112,4 +127,28 @@ h1 {
 /* new buttons are absolute */
 .subnav {
     padding-top: 15px;
+}
+
+/* progressbar styles */
+div.ui-progressbar {
+  height: 8px;
+  padding: 5px 0;
+}
+
+.ui-progressbar .ui-progressbar-value {
+  position: relative;
+  height: 16px;
+  top: -20px;
+}
+
+.children .ui-progressbar-value {
+  height: 8px;
+}
+
+.span-4.ui-progressbar {
+  width: 148px;
+}
+
+[aria-valuenow=100] div {
+  background: url("images/ui-bg_gloss-wave_green.png") repeat-x scroll 50% 50% #9FDA58;
 }

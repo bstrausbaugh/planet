@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print">
   <!--[if lt IE 8]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
-  <%= stylesheet_link_tag "planet" %>
-
   <script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
   <script type="text/javascript" src="/javascripts/jquery-ui-1.8.custom.min.js"></script>
   <script type="text/javascript" src="/javascripts/jrails.js?1237534962"></script>
@@ -25,29 +23,24 @@
 
   <script type="text/javascript">
       $(function(){
-            $('#rangeA').daterangepicker({arrows:true});
-       });
+        //$('#rangeA').daterangepicker({arrows:true});
+        $(".progress").each(function(index, progressbar) {
+          $("#" + progressbar.id).progressbar({ value: parseInt(progressbar.textContent) });
+        });
+        // the stylesheet selector doesn't seem to get evaluated so manually setting
+        $("[aria-valuenow=100] div").each(function(index, progressbar) {
+          progressbar.style.background='url("images/ui-bg_gloss-wave_green.png") repeat-x scroll 50% 50% #9FDA58';
+        });
+      });
   </script>
 
-  <style type="text/css">
-			/*demo page css*/
-			body{ font: 75% "Trebuchet MS", sans-serif; margin: 10px;}
-			.demoHeaders { margin-top: 2em; }
-			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
-			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
-			.button {padding: .6em 1em .6em 30px;text-decoration: none;position: relative; margin: 5px 0 5px 0;}
-			.button img {margin: 0 5px 0 0; position: absolute; left: .5em; top: 50%; margin-top: -8px;}
-			button.button img {margin: 0 5px 0 0; position: absolute; left: -2em; top: 50%; margin-top: -8px;}
-			ul#icons {margin: 0; padding: 0;}
-			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
-			ul#icons span.ui-icon {float: left; margin: 0 4px;}
-		</style>
+  <%= stylesheet_link_tag "planet" %>
 
 </head>
 <body>
 <div class="container">
   <div id="top-nav" class="nav"><%= top_nav %></div>
-  <p style="color: green"><%= flash[:notice] %></p>
+  <div id="flash" class="span-24 last"><%= flash[:notice] %></div>
 
   <%= yield %>
 </div>

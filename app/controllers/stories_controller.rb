@@ -32,8 +32,7 @@ class StoriesController < ApplicationController
   # POST /stories.xml
   def create
     
-    params[:story][:tracker] = nil
-    params[:story][:customer] = nil
+    assign_params_tracker
 
     @iteration = Iteration.find(params[:iteration_id])
     if @iteration
@@ -56,9 +55,8 @@ class StoriesController < ApplicationController
   # PUT /stories/1
   # PUT /stories/1.xml
   def update
-    params[:story][:tracker] = nil
-    params[:story][:customer] = nil
 
+    assign_params_tracker
     @story = Story.find(params[:id])
     
     respond_to do |format|
@@ -85,4 +83,15 @@ class StoriesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  protected
+  def assign_params_tracker
+    id = params[:story][:tracker_id]
+    if id.empty?
+      params[:story][:tracker] = nil
+    else
+      params[:story][:tracker] = Person.find(id)
+    end
+  end
+  
 end
