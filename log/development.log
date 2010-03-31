@@ -28068,3 +28068,311 @@ Rendered time_entries/_time_entry (1.5ms)
   [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
   [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
 Completed in 45ms (View: 36, DB: 2) | 200 OK [http://localhost/tasks/6]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-03-31 08:45:55) [GET]
+  [4;36;1mProject Load (3.4ms)[0m   [0;1mSELECT * FROM "projects" WHERE (hidden = 'f') ORDER BY name[0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mIteration Load (0.3ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 9 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.3ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 7 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 2 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 4 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 8 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 1 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+Completed in 300ms (View: 181, DB: 5) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-03-31 08:48:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mIteration Load (0.7ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 2) ORDER BY start_on DESC[0m
+Rendered iterations/_iteration (53.1ms)
+Rendered iterations/_iteration (1.7ms)
+Rendered iterations/_iteration (1.4ms)
+Rendered iterations/_iteration (1.5ms)
+Rendered iterations/_iteration (1.2ms)
+Completed in 349ms (View: 341, DB: 1) | 200 OK [http://localhost/projects/2]
+
+
+Processing IterationsController#show (for 127.0.0.1 at 2010-03-31 08:48:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering iterations/show
+  [4;36;1mStory Load (0.6ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories".iteration_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered stories/_story (23.1ms)
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered stories/_story (19.5ms)
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 96ms (View: 88, DB: 2) | 200 OK [http://localhost/iterations/1]
+
+
+Processing IterationsController#images to png (for 127.0.0.1 at 2010-03-31 08:48:13) [GET]
+  Parameters: {"id"=>"ui-bg_gloss-wave_green"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, new, show, and update):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-03-31 08:54:21) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mStory Load (0.3ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered tasks/_task (29.8ms)
+Rendered tasks/_task (1.9ms)
+Rendered tasks/_task (1.5ms)
+  [4;36;1mIteration Load (0.3ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 212ms (View: 173, DB: 12) | 200 OK [http://localhost/stories/7]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-03-31 08:54:53) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered tasks/_task (5.5ms)
+Rendered tasks/_task (1.1ms)
+Rendered tasks/_task (1.0ms)
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 40ms (View: 32, DB: 2) | 200 OK [http://localhost/stories/7]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-03-31 08:59:51) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered tasks/_task (5.6ms)
+Rendered tasks/_task (1.1ms)
+Rendered tasks/_task (1.0ms)
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 40ms (View: 32, DB: 2) | 200 OK [http://localhost/stories/7]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-03-31 09:10:17) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered tasks/_task (5.6ms)
+Rendered tasks/_task (1.1ms)
+Rendered tasks/_task (1.0ms)
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 75ms (View: 32, DB: 2) | 200 OK [http://localhost/stories/7]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-03-31 09:14:13) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.4ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered tasks/_task (5.7ms)
+Rendered tasks/_task (1.1ms)
+Rendered tasks/_task (1.0ms)
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 40ms (View: 32, DB: 2) | 200 OK [http://localhost/stories/7]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 09:14:22) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mTimeEntry Load (0.3ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 8) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (204.4ms)
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 267ms (View: 259, DB: 2) | 200 OK [http://localhost/tasks/8]
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-03-31 09:14:28) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering tasks/edit
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 111ms (View: 104, DB: 2) | 200 OK [http://localhost/tasks/8/edit]
+
+
+Processing TasksController#update (for 127.0.0.1 at 2010-03-31 09:14:34) [PUT]
+  Parameters: {"authenticity_token"=>"3J3NDxztgnVRjtIrh8Yo/AZYQvn6aMzS2xA6Cwr74mk=", "task"=>{"name"=>"dasd", "description"=>"<p>dsad</p>", "type"=>"Feature", "disposition"=>"Planned", "acceptor_id"=>"", "estimate"=>"3"}, "id"=>"8"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+WARNING: Can't mass-assign these protected attributes: type
+  [4;36;1mTask Update (0.3ms)[0m   [0;1mUPDATE "tasks" SET "estimate" = 3, "updated_at" = '2010-03-31 14:14:34' WHERE "id" = 8[0m
+Redirected to http://localhost:3000/stories/7
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/tasks/8]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-03-31 09:14:35) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered tasks/_task (5.9ms)
+Rendered tasks/_task (1.3ms)
+Rendered tasks/_task (1.2ms)
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 42ms (View: 34, DB: 2) | 200 OK [http://localhost/stories/7]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 09:14:42) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mTimeEntry Load (0.2ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 7) [0m
+  [4;36;1mStory Load (0.3ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 71ms (View: 63, DB: 1) | 200 OK [http://localhost/tasks/7]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 09:17:43) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;36;1mTimeEntry Load (0.2ms)[0m   [0;1mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 7) [0m
+  [4;35;1mStory Load (0.3ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/tasks/7]
+
+
+Processing TimeEntriesController#new (for 127.0.0.1 at 2010-03-31 09:17:50) [GET]
+  Parameters: {"task_id"=>"7"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering time_entries/edit
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mStory Load (0.3ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 90ms (View: 78, DB: 2) | 200 OK [http://localhost/tasks/7/time_entries/new]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 09:19:57) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mTimeEntry Load (0.2ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 7) [0m
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 31ms (View: 23, DB: 1) | 200 OK [http://localhost/tasks/7]
+
+
+Processing TimeEntriesController#new (for 127.0.0.1 at 2010-03-31 09:20:00) [GET]
+  Parameters: {"task_id"=>"7"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering time_entries/edit
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 38ms (View: 27, DB: 1) | 200 OK [http://localhost/tasks/7/time_entries/new]
+
+
+Processing TimeEntriesController#create (for 127.0.0.1 at 2010-03-31 09:20:07) [POST]
+  Parameters: {"authenticity_token"=>"3J3NDxztgnVRjtIrh8Yo/AZYQvn6aMzS2xA6Cwr74mk=", "time_entry"=>{"person1_id"=>"1", "person2_id"=>"2", "duration"=>"1"}, "task_id"=>"7"}
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mTimeEntry Create (0.4ms)[0m   [0mINSERT INTO "time_entries" ("duration", "person1_id", "person2_id", "task_id", "created_at", "updated_at") VALUES(1, 1, 1, 7, '2010-03-31 14:20:07', '2010-03-31 14:20:07')[0m
+Redirected to http://localhost:3000/tasks/7
+Completed in 27ms (DB: 2) | 302 Found [http://localhost/tasks/7/time_entries]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 09:20:07) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mTimeEntry Load (0.3ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 7) [0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (11.3ms)
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 42ms (View: 34, DB: 2) | 200 OK [http://localhost/tasks/7]
+
+
+Processing TimeEntriesController#show (for 127.0.0.1 at 2010-03-31 09:20:41) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mTimeEntry Load (0.2ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering time_entries/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #1 of app/views/time_entries/show.html.erb:
+1: <h1 class="span-22">Task : <%= @task.name %></h1>
+2: 
+3: <div class="subnav span-2 right last">
+4:   <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_edit.png", :alt => "Edit")+"Edit", edit_task_path(@task), :class => "button ui-state-default ui-corner-all" %>
+
+    app/views/time_entries/show.html.erb:1
+    app/controllers/time_entries_controller.rb:6:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (76.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 09:29:39) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mTimeEntry Load (0.3ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 7) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (11.4ms)
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 51ms (View: 43, DB: 2) | 200 OK [http://localhost/tasks/7]
