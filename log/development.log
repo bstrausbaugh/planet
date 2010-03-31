@@ -28376,3 +28376,272 @@ Rendered time_entries/_time_entry (11.4ms)
   [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
   [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
 Completed in 51ms (View: 43, DB: 2) | 200 OK [http://localhost/tasks/7]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-03-31 16:08:07) [GET]
+  [4;35;1mProject Load (0.9ms)[0m   [0mSELECT * FROM "projects" WHERE (hidden = 'f') ORDER BY name[0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 9 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 7 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 2 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 4 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 8 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 1 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+Completed in 23ms (View: 16, DB: 2) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#all (for 127.0.0.1 at 2010-03-31 16:08:13) [GET]
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 9 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 7 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 2 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 4 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 3 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 8 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 5 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 1 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+Completed in 26ms (View: 18, DB: 2) | 200 OK [http://localhost/projects/all]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-03-31 16:08:15) [GET]
+  [4;35;1mProject Load (0.9ms)[0m   [0mSELECT * FROM "projects" WHERE (hidden = 'f') ORDER BY name[0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 9 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 7 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 2 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 4 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 8 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 1 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+Completed in 23ms (View: 16, DB: 2) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#all (for 127.0.0.1 at 2010-03-31 16:08:16) [GET]
+  [4;36;1mProject Load (1.1ms)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 9 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 7 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 2 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 4 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 3 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 8 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 5 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 1 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+Completed in 27ms (View: 19, DB: 2) | 200 OK [http://localhost/projects/all]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-03-31 16:08:17) [GET]
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM "projects" WHERE (hidden = 'f') ORDER BY name[0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 9 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 7 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 2 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 4 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;36;1mIteration Load (0.1ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations".project_id = 8 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+  [4;35;1mIteration Load (0.1ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 1 AND ('2010-03-31' between start_on and end_on)) LIMIT 1[0m
+Completed in 64ms (View: 57, DB: 2) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-03-31 16:08:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mIteration Load (0.5ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations".project_id = 2) ORDER BY start_on DESC[0m
+Rendered iterations/_iteration (5.1ms)
+Rendered iterations/_iteration (1.2ms)
+Rendered iterations/_iteration (1.1ms)
+Rendered iterations/_iteration (1.2ms)
+Rendered iterations/_iteration (1.1ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/projects/2]
+
+
+Processing IterationsController#show (for 127.0.0.1 at 2010-03-31 16:08:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering iterations/show
+  [4;35;1mStory Load (0.4ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories".iteration_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered stories/_story (12.1ms)
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered stories/_story (9.4ms)
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 44ms (View: 35, DB: 2) | 200 OK [http://localhost/iterations/1]
+
+
+Processing IterationsController#images to png (for 127.0.0.1 at 2010-03-31 16:08:22) [GET]
+  Parameters: {"id"=>"ui-bg_gloss-wave_green"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, new, show, and update):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-03-31 16:08:30) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered tasks/_task (5.6ms)
+Rendered tasks/_task (1.1ms)
+Rendered tasks/_task (1.0ms)
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 41ms (View: 33, DB: 2) | 200 OK [http://localhost/stories/7]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 16:08:52) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;36;1mTimeEntry Load (0.3ms)[0m   [0;1mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 8) [0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (9.6ms)
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/tasks/8]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 16:09:26) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mTimeEntry Load (0.3ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 8) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (9.9ms)
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 83ms (View: 34, DB: 2) | 200 OK [http://localhost/tasks/8]
+
+
+Processing TimeEntriesController#new (for 127.0.0.1 at 2010-03-31 16:09:29) [GET]
+  Parameters: {"task_id"=>"8"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering time_entries/edit
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 38ms (View: 27, DB: 1) | 200 OK [http://localhost/tasks/8/time_entries/new]
+
+
+Processing TimeEntriesController#create (for 127.0.0.1 at 2010-03-31 16:09:36) [POST]
+  Parameters: {"authenticity_token"=>"3J3NDxztgnVRjtIrh8Yo/AZYQvn6aMzS2xA6Cwr74mk=", "time_entry"=>{"person1_id"=>"2", "person2_id"=>"2", "duration"=>"A"}, "task_id"=>"8"}
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template time_entries/new.erb in view path app/views:vendor/plugins/easy-fckeditor/app/views):
+  app/controllers/time_entries_controller.rb:42:in `block (2 levels) in create'
+  app/controllers/time_entries_controller.rb:36:in `create'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimeEntriesController#create (for 127.0.0.1 at 2010-03-31 16:09:54) [POST]
+  Parameters: {"authenticity_token"=>"3J3NDxztgnVRjtIrh8Yo/AZYQvn6aMzS2xA6Cwr74mk=", "time_entry"=>{"person1_id"=>"2", "person2_id"=>"2", "duration"=>"A"}, "task_id"=>"8"}
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template time_entries/new.erb in view path app/views:vendor/plugins/easy-fckeditor/app/views):
+  app/controllers/time_entries_controller.rb:42:in `block (2 levels) in create'
+  app/controllers/time_entries_controller.rb:36:in `create'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimeEntriesController#create (for 127.0.0.1 at 2010-03-31 16:12:50) [POST]
+  Parameters: {"authenticity_token"=>"3J3NDxztgnVRjtIrh8Yo/AZYQvn6aMzS2xA6Cwr74mk=", "time_entry"=>{"person1_id"=>"2", "person2_id"=>"2", "duration"=>"A"}, "task_id"=>"8"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template time_entries/new.erb in view path app/views:vendor/plugins/easy-fckeditor/app/views):
+  app/controllers/time_entries_controller.rb:53:in `block (2 levels) in create'
+  app/controllers/time_entries_controller.rb:47:in `create'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimeEntriesController#create (for 127.0.0.1 at 2010-03-31 16:12:55) [POST]
+  Parameters: {"authenticity_token"=>"3J3NDxztgnVRjtIrh8Yo/AZYQvn6aMzS2xA6Cwr74mk=", "time_entry"=>{"person1_id"=>"2", "person2_id"=>"2", "duration"=>"A"}, "task_id"=>"8"}
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template time_entries/new.erb in view path app/views:vendor/plugins/easy-fckeditor/app/views):
+  app/controllers/time_entries_controller.rb:53:in `block (2 levels) in create'
+  app/controllers/time_entries_controller.rb:47:in `create'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimeEntriesController#create (for 127.0.0.1 at 2010-03-31 16:14:53) [POST]
+  Parameters: {"authenticity_token"=>"3J3NDxztgnVRjtIrh8Yo/AZYQvn6aMzS2xA6Cwr74mk=", "time_entry"=>{"person1_id"=>"2", "person2_id"=>"2", "duration"=>"5"}, "task_id"=>"8"}
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mTimeEntry Create (0.3ms)[0m   [0mINSERT INTO "time_entries" ("duration", "person1_id", "person2_id", "task_id", "created_at", "updated_at") VALUES(5, 1, 1, 8, '2010-03-31 21:14:53', '2010-03-31 21:14:53')[0m
+Redirected to http://localhost:3000/tasks/8
+Completed in 27ms (DB: 2) | 302 Found [http://localhost/tasks/8/time_entries]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 16:14:53) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mTimeEntry Load (0.4ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 8) [0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (10.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (1.3ms)
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 44ms (View: 35, DB: 2) | 200 OK [http://localhost/tasks/8]
