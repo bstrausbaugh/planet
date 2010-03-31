@@ -12,6 +12,7 @@ class Story < ActiveRecord::Base
   end
   
   def task_count
+    return 0 if self.tasks.nil?
     self.tasks.size
   end
 

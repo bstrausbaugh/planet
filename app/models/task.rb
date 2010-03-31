@@ -14,6 +14,7 @@ class Task < ActiveRecord::Base
   end
 
   def remaining
+    return 0 if self.estimate.nil?
     self.estimate - actual 
   end
   

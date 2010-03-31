@@ -37,3 +37,17 @@
 </div>
 
 <hr />
+<div class="subnav span-24 last">
+  <p>
+    <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/time_entry_new.png") + 'Add Time', new_task_time_entry_path(@task), :class => "ui-state-default ui-corner-all button" %>
+  </p>
+</div>
+
+<div id="tasks" class="children span-24 last">
+  <span class="header span-6">Entry Recorded</span>
+  <span class="header span-6 center">Person 1</span>
+  <span class="header span-6 center">Person 2</span>
+  <span class="header span-3 center">Duration</span>
+  <span class="span-3 last">&nbsp;</span>
+  <%= render :partial => @task.time_entries %>
+</div>
