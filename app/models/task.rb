@@ -4,4 +4,17 @@ class Task < ActiveRecord::Base
   belongs_to :acceptor, :class_name => 'Person'
 
   validates_presence_of :name
+  
+  attr_accessor :work
+  def actual
+    return @work unless @work.nil? # only calc once
+    @work = 1 + rand(self.estimate) 
+    return 0 if self.estimate.nil? || @work > self.estimate
+    @work 
+  end
+
+  def remaining
+    self.estimate - actual 
+  end
+  
 end

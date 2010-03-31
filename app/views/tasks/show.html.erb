@@ -1,3 +1,39 @@
+<h1 class="span-22">Task : <%= @task.name %></h1>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<div class="subnav span-2 right last">
+  <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_edit.png", :alt => "Edit")+"Edit", edit_task_path(@task), :class => "button ui-state-default ui-corner-all" %>
+</div>
+
+<div class="span-3">
+  <b>Type:</b>
+</div>
+<div class="span-9">
+  <%= @task.type %>&nbsp;
+</div>
+
+<div class="span-3">
+  <b>Estimate:</b>
+</div>
+<div class="span-9 last">
+  <%=h @task.estimate %>&nbsp;
+</div>
+
+<div class="span-3">
+  &nbsp;
+</div>
+<div class="span-9">
+  &nbsp;
+</div>
+
+<div class="span-3">
+  <b>Disposition:</b>
+</div>
+<div class="span-9 last">
+  <%=h @task.disposition %>&nbsp;
+</div>
+
+<div class="description span-24 last">
+  <%= @task.description %>
+</div>
+
+<hr />

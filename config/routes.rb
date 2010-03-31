@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :tasks
+  
+  map.resources :time_entries
+  
+  map.resources :tasks, :has_many => [ :time_entries ]
 
   map.resources :stories, :has_many => [ :tasks ]
 

@@ -12,7 +12,7 @@ class Story < ActiveRecord::Base
   end
   
   def task_count
-    2
+    self.tasks.size
   end
 
   attr_accessor :work

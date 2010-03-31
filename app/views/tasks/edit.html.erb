@@ -1,12 +1,62 @@
-<h1>Editing task</h1>
+<h1 class="span-21">Task : <%= @task.new_record? ? "New" : @task.name %></h1>
 
-<% form_for(@task) do |f| %>
-  <%= f.error_messages %>
+<div class="subnav span-3 last right">
+  <a href="<%= @task.new_record? ? story_path(@story) : task_path(@task) %>" class="button ui-state-default ui-corner-all">
+    <img src="/stylesheets/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
+  </a>
+</div>
 
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<% form = Proc.new do |f| %>
+    <div class="span-24 last">
+      <%= error_messages_for :task %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :name %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :name %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :description %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= fckeditor_textarea(:task, :description, :toolbarSet => 'Easy', :height => '350px') %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :type %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.select(:type, %w{Feature Debt Defect FTest ATest Overhead}) %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :disposition %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.select(:disposition, %w{Planned Discovered Added}) %>
+    </div>
+
+    <div class="span-24 last">
+      <%= f.label :acceptor %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= collection_select(:task, :acceptor_id, Person.all, :id, :name, {:include_blank => 'Not Assigned'}, {}) %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :estimate %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :estimate %>
+    </div>
+    <div class="span-24 last">
+      <button type="submit" class="button ui-state-default ui-corner-all">
+        <img src="/stylesheets/blueprint/plugins/buttons/icons/task_save.png" alt=""/> <%= @task.new_record? ? "Create" : "Update" %>
+      </button>
+    </div>
 <% end %>
-
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<% @task.new_record? ? form_for([@story, Task.new], &form) : form_for(@task, &form) %>

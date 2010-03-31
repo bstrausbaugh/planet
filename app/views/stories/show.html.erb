@@ -33,11 +33,23 @@
 </div>
 
 <div class="description span-24 last">
-  <%=h @story.description %>
+  <%= @story.description %>
 </div>
 
 <hr />
+<div class="subnav span-24 last">
+  <p>
+    <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_new.png") + 'New Task', new_story_task_path(@story), :class => "ui-state-default ui-corner-all button" %>
+  </p>
+</div>
 
-<div class="subnav  span-24 last">
-   link_to 'New Task', new_story_task_path(@story) 
+<div id="tasks" class="children span-24 last">
+  <span class="header span-6">Name</span>
+  <span class="header span-1 center">Type</span>
+  <span class="header span-3 center">Est.</span>
+  <span class="header span-3 center">Act.</span>
+  <span class="header span-3 center">Rem.</span>
+  <span class="header span-4 center">Disposition</span>
+  <span class="span-4 last">&nbsp;</span>
+  <%= render :partial => @story.tasks %>
 </div>
