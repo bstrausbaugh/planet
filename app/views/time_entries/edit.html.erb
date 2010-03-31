@@ -1,0 +1,40 @@
+<h1 class="span-21">Time Entry : <%= @time_entry.new_record? ? DateTime.now : @time_entry.created_at %></h1>
+
+<div class="subnav span-3 last right">
+  <a href="<%= @time_entry.new_record? ? task_path(@task) : task_path(@task) %>" class="button ui-state-default ui-corner-all">
+    <img src="/stylesheets/blueprint/plugins/buttons/icons/cross.png" alt=""/> Cancel
+  </a>
+</div>
+
+<% form = Proc.new do |f| %>
+    <div class="span-24 last">
+      <%= error_messages_for :time_entry %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :person1 %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= collection_select(:time_entry, :person1_id, Person.all, :id, :name, {:include_blank => 'Not Assigned'}, {}) %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :person2 %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= collection_select(:time_entry, :person2_id, Person.all, :id, :name, {:include_blank => 'Not Assigned'}, {}) %>
+    </div>
+    <div class="span-24 last">
+      <%= f.label :duration %>
+      <br/>
+    </div>
+    <div class="span-24 last">
+      <%= f.text_field :duration %>
+    </div>
+    <div class="span-24 last">
+      <button type="submit" class="button ui-state-default ui-corner-all">
+        <img src="/stylesheets/blueprint/plugins/buttons/icons/task_save.png" alt=""/> <%= @time_entry.new_record? ? "Create" : "Update" %>
+      </button>
+    </div>
+<% end %>
+<% @time_entry.new_record? ? form_for([@task, TimeEntry.new], &form) : form_for(@time_entry, &form) %>

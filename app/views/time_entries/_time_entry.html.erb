@@ -1,0 +1,7 @@
+<% div_for time_entry, :class => "span-24 last" do %>
+    <span class="span-6"><%= link_to h(time_entry.created_at), time_entry %></span>
+    <span class="span-6 center"><%= time_entry.person1.name %>&nbsp;</span>
+    <span class="span-6 center"><%= time_entry.person2.name %>&nbsp;</span>
+    <span class="span-3 center"><%= time_entry.duration %>&nbsp;</span>
+    <span class="span-3 last right"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/time_entry_delete.png", :alt => "Remove"), time_entry, :confirm => 'Are you sure?', :method => :delete %></span>
+<% end %>

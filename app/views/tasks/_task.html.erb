@@ -1,0 +1,10 @@
+<% div_for task, :class => "span-24 last" do %>
+    <span class="span-6"><%= link_to h(task.name), task %></span>
+    <span class="span-1 center"><%= task.type %>&nbsp;</span>
+    <span class="span-3 center"><%= task.estimate %>&nbsp;</span>
+    <span class="span-3 center"><%= task.actual %>&nbsp;</span>
+    <span class="span-3 center"><%= task.remaining %>&nbsp;</span>
+    <span class="span-4 center"><%= task.disposition %>&nbsp;</span>
+    <span class="span-2 right"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_edit.png", :alt => "Edit"), edit_task_path(task) %></span>
+    <span class="span-2 last right"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_delete.png", :alt => "Remove"), task, :confirm => 'Are you sure?', :method => :delete %></span>
+<% end %>
