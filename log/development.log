@@ -28026,3 +28026,45 @@ Rendered time_entries/_time_entry (11.7ms)
   [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
   [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
 Completed in 44ms (View: 35, DB: 2) | 200 OK [http://localhost/tasks/6]
+
+
+Processing TimeEntriesController#new (for 127.0.0.1 at 2010-03-31 00:58:21) [GET]
+  Parameters: {"task_id"=>"6"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering time_entries/edit
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mStory Load (0.9ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 189ms (View: 175, DB: 2) | 200 OK [http://localhost/tasks/6/time_entries/new]
+
+
+Processing TimeEntriesController#create (for 127.0.0.1 at 2010-03-31 00:58:36) [POST]
+  Parameters: {"authenticity_token"=>"N6TBlnwekT0XjaWL+MJwfEWuek5pvNWlAwkb/Wmnu5M=", "time_entry"=>{"person1_id"=>"2", "person2_id"=>"1", "duration"=>"3"}, "task_id"=>"6"}
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mTimeEntry Create (0.4ms)[0m   [0;1mINSERT INTO "time_entries" ("duration", "person1_id", "person2_id", "task_id", "created_at", "updated_at") VALUES(3, 1, 1, 6, '2010-03-31 05:58:36', '2010-03-31 05:58:36')[0m
+Redirected to http://localhost:3000/tasks/6
+Completed in 28ms (DB: 2) | 302 Found [http://localhost/tasks/6/time_entries]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-03-31 00:58:36) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;36;1mTimeEntry Load (0.3ms)[0m   [0;1mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 6) [0m
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (11.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendered time_entries/_time_entry (1.5ms)
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 7) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 45ms (View: 36, DB: 2) | 200 OK [http://localhost/tasks/6]
