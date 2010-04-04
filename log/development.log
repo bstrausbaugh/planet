@@ -30651,3 +30651,345 @@ ActionController::UnknownAction (No action responded to images. Actions: create,
   /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
 
 Rendering rescues/layout (not_found)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:49:01) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/stories/3]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-04-04 16:49:05) [GET]
+  Parameters: {"story_id"=>"3"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tasks/edit
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 36ms (View: 24, DB: 1) | 200 OK [http://localhost/stories/3/tasks/new]
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-04-04 16:49:23) [POST]
+  Parameters: {"authenticity_token"=>"y1zKRUQT/NYtFQrfTSVpa4rg9JbVzSSRPEqLYYkswJk=", "task"=>{"name"=>"My new task", "description"=>"<p>adsad</p>", "type"=>"Debt", "disposition"=>"Discovered", "acceptor_id"=>"2", "estimate"=>"2"}, "story_id"=>"3"}
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+WARNING: Can't mass-assign these protected attributes: type
+  [4;36;1mTask Create (0.4ms)[0m   [0;1mINSERT INTO "tasks" ("name", "description", "type", "disposition", "acceptor_id", "estimate", "complete", "story_id", "created_at", "updated_at") VALUES('My new task', '<p>adsad</p>', NULL, 'Discovered', 2, 2, NULL, 3, '2010-04-04 21:49:23', '2010-04-04 21:49:23')[0m
+Redirected to http://localhost:3000/tasks/9
+Completed in 46ms (DB: 2) | 302 Found [http://localhost/stories/3/tasks]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-04-04 16:49:23) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;36;1mTimeEntry Load (0.2ms)[0m   [0;1mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 9) [0m
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+  [4;36;1mIteration Load (0.3ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 35ms (View: 27, DB: 1) | 200 OK [http://localhost/tasks/9]
+
+
+Processing IterationsController#show (for 127.0.0.1 at 2010-04-04 16:49:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering iterations/show
+  [4;35;1mStory Load (0.4ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories".iteration_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered stories/_story (9.9ms)
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered stories/_story (7.2ms)
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 79ms (View: 71, DB: 2) | 200 OK [http://localhost/iterations/1]
+
+
+Processing IterationsController#images to png (for 127.0.0.1 at 2010-04-04 16:49:57) [GET]
+  Parameters: {"id"=>"ui-bg_gloss-wave_green"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, new, show, and update):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IterationsController#show (for 127.0.0.1 at 2010-04-04 16:53:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering iterations/show
+  [4;35;1mStory Load (0.4ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories".iteration_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered stories/_story (10.1ms)
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered stories/_story (7.3ms)
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 38ms (View: 30, DB: 2) | 200 OK [http://localhost/iterations/1]
+
+
+Processing IterationsController#images to png (for 127.0.0.1 at 2010-04-04 16:53:03) [GET]
+  Parameters: {"id"=>"ui-bg_gloss-wave_green"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, new, show, and update):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IterationsController#show (for 127.0.0.1 at 2010-04-04 16:53:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering iterations/show
+  [4;35;1mStory Load (0.4ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories".iteration_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered stories/_story (10.0ms)
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered stories/_story (7.3ms)
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 39ms (View: 30, DB: 2) | 200 OK [http://localhost/iterations/1]
+
+
+Processing IterationsController#images to png (for 127.0.0.1 at 2010-04-04 16:53:05) [GET]
+  Parameters: {"id"=>"ui-bg_gloss-wave_green"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, new, show, and update):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:53:13) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+
+ActionView::TemplateError (undefined method `complete?' for nil:NilClass) on line #9 of app/views/tasks/_task.html.erb:
+6:     <span class="span-3 center"><%= task.remaining %>&nbsp;</span>
+7:     <span class="span-4 center"><%= task.disposition %>&nbsp;</span>
+8:     <span class="span-1 right"><%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_edit.png", :alt => "Edit"), edit_task_path(task) %></span>
+9:     <span class="span-1 right"><%= link_to_if(@task.complete?, image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_incomplete.png", :alt => "Incomplete")+"Incomplete", task_path(@task)+"/incomplete", :class => "button ui-state-default ui-corner-all") do |name|
+10:         link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_complete.png", :alt => "Complete")+"Complete", task_path(@task)+"/complete", :class => "button ui-state-default ui-corner-all"
+11:      end
+12:     %></span>
+
+    app/views/tasks/_task.html.erb:9:in `block in _run_erb_app47views47tasks47_task46html46erb_locals_object_task_task_counter'
+    app/views/tasks/_task.html.erb:1
+    app/views/stories/show.html.erb:54
+    app/controllers/stories_controller.rb:8:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (113.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:54:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered tasks/_task (7.6ms)
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 42ms (View: 34, DB: 1) | 200 OK [http://localhost/stories/3]
+
+
+Processing TasksController#complete (for 127.0.0.1 at 2010-04-04 16:55:01) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+  [4;35;1mTask Update (0.4ms)[0m   [0mUPDATE "tasks" SET "complete" = 't', "updated_at" = '2010-04-04 21:55:01' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/tasks/9
+Completed in 70ms (DB: 1) | 302 Found [http://localhost/tasks/9/complete]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-04-04 16:55:01) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;35;1mTimeEntry Load (0.2ms)[0m   [0mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 9) [0m
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 75ms (View: 67, DB: 1) | 200 OK [http://localhost/tasks/9]
+
+
+Processing TasksController#incomplete (for 127.0.0.1 at 2010-04-04 16:55:07) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+  [4;36;1mTask Update (0.3ms)[0m   [0;1mUPDATE "tasks" SET "complete" = 'f', "updated_at" = '2010-04-04 21:55:07' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/tasks/9
+Completed in 63ms (DB: 1) | 302 Found [http://localhost/tasks/9/incomplete]
+
+
+Processing TasksController#show (for 127.0.0.1 at 2010-04-04 16:55:07) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mTask Load (0.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering tasks/show
+  [4;36;1mTimeEntry Load (0.2ms)[0m   [0;1mSELECT * FROM "time_entries" WHERE ("time_entries".task_id = 9) [0m
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 39ms (View: 24, DB: 1) | 200 OK [http://localhost/tasks/9]
+
+
+Processing IterationsController#show (for 127.0.0.1 at 2010-04-04 16:58:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering iterations/show
+  [4;35;1mStory Load (0.4ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories".iteration_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered stories/_story (10.0ms)
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".story_id = 7) [0m
+Rendered stories/_story (50.2ms)
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 82ms (View: 74, DB: 2) | 200 OK [http://localhost/iterations/1]
+
+
+Processing IterationsController#images to png (for 127.0.0.1 at 2010-04-04 16:58:05) [GET]
+  Parameters: {"id"=>"ui-bg_gloss-wave_green"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, new, show, and update):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:58:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered tasks/_task (7.3ms)
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 42ms (View: 34, DB: 1) | 200 OK [http://localhost/stories/3]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:58:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered tasks/_task (6.2ms)
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 34ms (View: 26, DB: 1) | 200 OK [http://localhost/stories/3]
+
+
+Processing TasksController#complete_quick (for 127.0.0.1 at 2010-04-04 16:58:23) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+  [4;36;1mTask Update (19.3ms)[0m   [0;1mUPDATE "tasks" SET "complete" = 't', "updated_at" = '2010-04-04 21:58:23' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/stories/3
+Completed in 44ms (DB: 20) | 302 Found [http://localhost/tasks/9/complete_quick]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:58:23) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered tasks/_task (6.0ms)
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 36ms (View: 28, DB: 1) | 200 OK [http://localhost/stories/3]
+
+
+Processing TasksController#incomplete_quick (for 127.0.0.1 at 2010-04-04 16:58:25) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+  [4;36;1mStory Load (0.5ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+  [4;35;1mTask Update (0.4ms)[0m   [0mUPDATE "tasks" SET "complete" = 'f', "updated_at" = '2010-04-04 21:58:25' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/stories/3
+Completed in 74ms (DB: 1) | 302 Found [http://localhost/tasks/9/incomplete_quick]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:58:25) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStory Load (0.3ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered tasks/_task (6.2ms)
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 35ms (View: 26, DB: 1) | 200 OK [http://localhost/stories/3]
+
+
+Processing TasksController#complete_quick (for 127.0.0.1 at 2010-04-04 16:58:26) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+  [4;36;1mTask Update (0.3ms)[0m   [0;1mUPDATE "tasks" SET "complete" = 't', "updated_at" = '2010-04-04 21:58:26' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/stories/3
+Completed in 72ms (DB: 1) | 302 Found [http://localhost/tasks/9/complete_quick]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:58:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mStory Load (0.2ms)[0m   [0mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered tasks/_task (50.0ms)
+  [4;35;1mIteration Load (0.2ms)[0m   [0mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 79ms (View: 70, DB: 1) | 200 OK [http://localhost/stories/3]
+
+
+Processing TasksController#incomplete_quick (for 127.0.0.1 at 2010-04-04 16:58:29) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 9) [0m
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+  [4;35;1mTask Update (0.3ms)[0m   [0mUPDATE "tasks" SET "complete" = 'f', "updated_at" = '2010-04-04 21:58:29' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/stories/3
+Completed in 69ms (DB: 1) | 302 Found [http://localhost/tasks/9/incomplete_quick]
+
+
+Processing StoriesController#show (for 127.0.0.1 at 2010-04-04 16:58:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStory Load (0.2ms)[0m   [0;1mSELECT * FROM "stories" WHERE ("stories"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering stories/show
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".story_id = 3) [0m
+Rendered tasks/_task (6.3ms)
+  [4;36;1mIteration Load (0.2ms)[0m   [0;1mSELECT * FROM "iterations" WHERE ("iterations"."id" = 1) [0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Completed in 34ms (View: 26, DB: 1) | 200 OK [http://localhost/stories/3]

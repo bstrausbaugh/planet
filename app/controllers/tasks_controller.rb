@@ -98,6 +98,28 @@ class TasksController < ApplicationController
       format.xml  { head :ok }
     end
   end  
+
+  def complete_quick
+    @task = Task.find(params[:id])
+    @story = @task.story
+    @task.complete = true
+    @task.save
+    respond_to do |format|
+      format.html { redirect_to(@story) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def incomplete_quick
+    @task = Task.find(params[:id])
+    @story = @task.story
+    @task.complete = false
+    @task.save
+    respond_to do |format|
+      format.html { redirect_to(@story) }
+      format.xml  { head :ok }
+    end
+  end 
   
   protected
   def assign_params_acceptor
