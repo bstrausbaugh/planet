@@ -1,7 +1,11 @@
 <h1 class="span-22">Task : <%= @task.name %></h1>
 
-<div class="subnav span-2 right last">
+<div class="subnav right last">
   <%= link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_edit.png", :alt => "Edit")+"Edit", edit_task_path(@task), :class => "button ui-state-default ui-corner-all" %>
+  <%= link_to_if(@task.complete?, image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_incomplete.png", :alt => "Incomplete")+"Incomplete", task_path(@task)+"/incomplete", :class => "button ui-state-default ui-corner-all") do |name|
+        link_to image_tag("/stylesheets/blueprint/plugins/buttons/icons/task_complete.png", :alt => "Complete")+"Complete", task_path(@task)+"/complete", :class => "button ui-state-default ui-corner-all"
+     end
+  %>
 </div>
 
 <div class="span-3">

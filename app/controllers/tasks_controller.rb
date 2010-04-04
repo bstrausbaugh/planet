@@ -79,6 +79,25 @@ class TasksController < ApplicationController
     end
   end
   
+  def complete
+    @task = Task.find(params[:id])
+    @task.complete = true
+    @task.save
+    respond_to do |format|
+      format.html { redirect_to(@task) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def incomplete
+    @task = Task.find(params[:id])
+    @task.complete = false
+    @task.save
+    respond_to do |format|
+      format.html { redirect_to(@task) }
+      format.xml  { head :ok }
+    end
+  end  
   
   protected
   def assign_params_acceptor
