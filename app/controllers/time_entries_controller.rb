@@ -1,15 +1,5 @@
 class TimeEntriesController < ApplicationController
-  
-  def new
-    @task = Task.find(params[:task_id])
-    @time_entry = TimeEntry.new
 
-    respond_to do |format|
-      format.html { render :edit }
-      format.xml  { render :xml => @time_entry }
-    end
-  end
-  
   def show
     @time_entry = TimeEntry.find(params[:id])
 
@@ -34,7 +24,6 @@ class TimeEntriesController < ApplicationController
   end
 
   def create
-    
     assign_params_persons
 
     @task = Task.find(params[:task_id])

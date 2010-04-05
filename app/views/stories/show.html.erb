@@ -51,5 +51,50 @@
   <span class="header span-3 center">Rem.</span>
   <span class="header span-4 center">Disposition</span>
   <span class="span-4 last">&nbsp;</span>
-  <%= render :partial => @story.tasks %>
+<%= render :partial => @story.tasks %>
 </div>
+<ul>
+<% @story.tasks.each do |task| %>
+	<div id="dialog-confirm-<%= task.id %>" title="Add Time" style="visibility: hidden;">
+	<p>
+	<% form = Proc.new do |f| %>
+		<%= f.label :person1 %>
+      	<br/>
+      	<%= collection_select(:time_entry, :person1_id, Person.all, :id, :name, {:include_blank => 'Not Assigned'}, {}) %>
+		<br/>
+      	<%= f.label :person2 %>
+      	<br/>
+      	<%= collection_select(:time_entry, :person2_id, Person.all, :id, :name, {:include_blank => 'Not Assigned'}, {}) %>
+      	<br/>
+		<%= f.label :duration %>
+      	<br/>
+      	<%= f.text_field :duration %>
+	<% end %>
+	<% form_for([task, TimeEntry.new], :html => {:id => "new_time_entry_" + task.id.to_s}, &form) %>
+	</p>
+	</div>
+<% end %>
+
+<script type="text/javascript">
+function addTime(id) {	
+	// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	$("#dialog").dialog("destroy");
+	var dialog_id="#dialog-confirm-" + id;
+	var form_id = "#new_time_entry_" + id;
+	$(dialog_id).css("visibility","visible");
+	$(dialog_id).dialog({
+		resizable: false,
+		height:260,
+		modal: true,
+		buttons: {
+			'Add Time': function() {
+				$(form_id).submit();
+			},
+			Cancel: function() {
+				$(this).dialog('close');
+			}
+		}
+	});
+	return false;
+}
+</script>
